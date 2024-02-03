@@ -1,0 +1,29 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.mannetroll.logging:metricslog >------------------
+[INFO] Building metricslog 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ metricslog ---
+[INFO] com.mannetroll.logging:metricslog:jar:1.0.0
+[INFO] +- junit:junit:jar:4.8.1:test
+[INFO] +- com.fasterxml.jackson.core:jackson-databind:jar:2.12.1:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.12.1:compile
+[INFO] |  \- com.fasterxml.jackson.core:jackson-core:jar:2.12.1:compile
+[INFO] +- org.apache.logging.log4j:log4j-api:jar:2.19.0:compile
+[INFO] +- org.apache.logging.log4j:log4j-core:jar:2.19.0:compile
+[INFO] +- org.apache.commons:commons-lang3:jar:3.11:compile
+[INFO] +- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.12.1:compile
+[INFO] +- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.12.1:compile
+[INFO] +- io.dropwizard.metrics:metrics-core:jar:3.1.5:compile
+[INFO] +- io.dropwizard.metrics:metrics-healthchecks:jar:3.1.5:compile
+[INFO] +- commons-io:commons-io:jar:2.8.0:compile
+[INFO] \- com.fasterxml.jackson.datatype:jackson-datatype-joda:jar:2.12.1:compile
+[INFO]    \- joda-time:joda-time:jar:2.10.8:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.666 s
+[INFO] Finished at: 2024-02-03T18:55:51+01:00
+[INFO] ------------------------------------------------------------------------
