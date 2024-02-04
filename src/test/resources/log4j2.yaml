@@ -1,0 +1,13 @@
+Configuration:
+   Appenders:
+      Console:
+         name: ConsoleAppender
+         target: SYSTEM_OUT
+         MetricJsonLayout:
+            locationInfo: true
+            osInfo: true
+   Loggers:
+      Root:
+         level: info
+         AppenderRef:
+         -  ref: ConsoleAppender
