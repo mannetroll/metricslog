@@ -1,4 +1,4 @@
-package com.mannetroll.metrics.util;
+package com.mannetroll.metrics.helper;
 
 /**
  * @author mannetroll

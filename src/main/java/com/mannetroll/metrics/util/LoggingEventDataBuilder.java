@@ -19,6 +19,8 @@ import org.apache.logging.log4j.message.MapMessage;
 import org.apache.logging.log4j.message.Message;
 import org.apache.logging.log4j.message.ObjectMessage;
 
+import com.mannetroll.metrics.helper.Constants;
+
 /**
  * @author mannetroll
  */

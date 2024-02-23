@@ -12,6 +12,7 @@ import org.apache.logging.log4j.core.LogEvent;
 import com.codahale.metrics.Snapshot;
 import com.mannetroll.metrics.codahale.AppenderMetricsManager;
 import com.mannetroll.metrics.codahale.AppenderTimer;
+import com.mannetroll.metrics.helper.Constants;
 import com.sun.management.OperatingSystemMXBean;
 
 /**
