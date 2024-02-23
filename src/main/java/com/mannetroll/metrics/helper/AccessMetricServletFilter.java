@@ -24,7 +24,7 @@ import org.slf4j.MDC;
  * <p/>
  * The values are removed after the request is processed.
  *
- * @author drtobbe
+ * @author mannetroll
  */
 public class AccessMetricServletFilter implements Filter {
     private Logger logger = LoggerFactory.getLogger(AccessMetricServletFilter.class);
