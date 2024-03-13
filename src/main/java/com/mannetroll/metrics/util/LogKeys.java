@@ -7,6 +7,7 @@ public class LogKeys {
 	public static final String LOCATION = "location";
 	public static final String EXCEPTION = "exception";
 	public static final String APPLICATION = "application";
+	public static final String SYSTEMNAME = "systemname";
 	public static final String THREAD = "thread";
 	public static final String DESCRIPTION = "description";
 	public static final String ELAPSED = "elapsed";

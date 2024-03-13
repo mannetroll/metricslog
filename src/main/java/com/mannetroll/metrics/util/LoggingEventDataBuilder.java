@@ -78,6 +78,9 @@ public class LoggingEventDataBuilder {
 
 		if (application != null) {
 			map.put(LogKeys.APPLICATION, application);
+			Map<String, Object> tmp = new LinkedHashMap<>();
+			tmp.put(LogKeys.SYSTEMNAME, application);
+			map.put("alces", tmp);
 		}
 
 		Throwable throwable = event.getThrown();
