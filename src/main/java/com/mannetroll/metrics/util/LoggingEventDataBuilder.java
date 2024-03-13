@@ -25,6 +25,7 @@ import com.mannetroll.metrics.helper.Constants;
  * @author mannetroll
  */
 public class LoggingEventDataBuilder {
+	private static final String NAMESPACE = "alces";
 	private static final String COMMON = "common";
 	private static final long uptime = System.currentTimeMillis();
 
@@ -80,7 +81,7 @@ public class LoggingEventDataBuilder {
 			map.put(LogKeys.APPLICATION, application);
 			Map<String, Object> tmp = new LinkedHashMap<>();
 			tmp.put(LogKeys.SYSTEMNAME, application);
-			map.put("alces", tmp);
+			map.put(NAMESPACE, tmp);
 		}
 
 		Throwable throwable = event.getThrown();
