@@ -5,6 +5,7 @@ Configuration:
       target: SYSTEM_OUT
       MetricJsonLayout:
         application: myapp
+        namespace: mannetroll        
         locationInfo: true
         osInfo: true
   Loggers:

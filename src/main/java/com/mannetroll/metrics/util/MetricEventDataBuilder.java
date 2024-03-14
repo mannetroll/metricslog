@@ -31,8 +31,8 @@ public class MetricEventDataBuilder {
         }
     }
 
-    public Map<String, Object> toJson(LogEvent event, String application, boolean locationInfo, boolean osInfo, boolean b3TracingInfo) {
-        Map<String, Object> map = metricEventDataBuilder.getMap(event, application, locationInfo, b3TracingInfo);
+    public Map<String, Object> toJson(LogEvent event, String application, String namespace, boolean locationInfo, boolean osInfo, boolean b3TracingInfo) {
+        Map<String, Object> map = metricEventDataBuilder.getMap(event, application, namespace, locationInfo, b3TracingInfo);
         //
         //Add Metrics Event data
         String metrics_name = getMDCString(Constants.METRICS_NAME, event);

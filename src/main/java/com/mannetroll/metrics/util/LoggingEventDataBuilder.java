@@ -25,12 +25,12 @@ import com.mannetroll.metrics.helper.Constants;
  * @author mannetroll
  */
 public class LoggingEventDataBuilder {
-	private static final String NAMESPACE = "alces";
 	private static final String COMMON = "common";
 	private static final long uptime = System.currentTimeMillis();
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public Map<String, Object> getMap(LogEvent event, String application, boolean locationInfo, boolean b3TracingInfo) {
+	public Map<String, Object> getMap(LogEvent event, String application, String namespace, boolean locationInfo,
+			boolean b3TracingInfo) {
 		final Map<String, Object> map = new LinkedHashMap<>();
 
 		// this GMT timestamp will propagate all the way to elastic
@@ -79,9 +79,11 @@ public class LoggingEventDataBuilder {
 
 		if (application != null) {
 			map.put(LogKeys.APPLICATION, application);
-			Map<String, Object> tmp = new LinkedHashMap<>();
-			tmp.put(LogKeys.SYSTEMNAME, application);
-			map.put(NAMESPACE, tmp);
+			if (application != null) {
+				Map<String, Object> tmp = new LinkedHashMap<>();
+				tmp.put(LogKeys.SYSTEMNAME, application);
+				map.put(namespace, tmp);
+			}
 		}
 
 		Throwable throwable = event.getThrown();
