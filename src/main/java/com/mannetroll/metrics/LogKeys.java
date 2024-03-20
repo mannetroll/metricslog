@@ -19,6 +19,8 @@ public class LogKeys {
 	public static final String ERROR_TYPE = "error.type";
 	//
 	public static final String HTTP_REQUEST_METHOD = "http.request.method";
+	public static final String HTTP_REQUEST_REMOTE_HOST = "http.request.remote_host";
+	public static final String HTTP_REQUEST_X_FORWARDED_FOR = "http.request.x_forwarded_for";
 	public static final String HTTP_RESPONSE_STATUS_CODE = "http.response.status_code";
 	public static final String HTTP_RESPONSE_TIME_MS = "http.response.time_ms";
 	public static final String USER_AGENT_NAME = "user_agent.name";
@@ -46,11 +48,8 @@ public class LogKeys {
 	public static final String METRICS_MEANRATE = "metrics.meanrate";
 	public static final String METRICS_COUNT = "metrics.count";
 	public static final String DELTAMINUTES = "delta_minutes";
-	//
 	public static final String NANOTIME = "nanotime";
 	//
-	public static final String REQUEST_REMOTE_HOST = "request_remote_host";
-	public static final String REQUEST_X_FORWARDED_FOR = "request_x_forwarded_for";
 	public static final String ACCESS_FILTER_RE = "AccessFilter.RuntimeException";
 	public static final String ACCESS_FILTER_SE = "AccessFilter.ServletException";
 	public static final String ACCESS_FILTER_IO = "AccessFilter.IOException";
