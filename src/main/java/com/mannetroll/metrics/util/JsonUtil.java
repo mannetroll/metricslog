@@ -15,7 +15,7 @@ public class JsonUtil {
         try {
             return mapper.writeValueAsString(map) + "\r\n";
         } catch (Exception e) {
-            return "{\"" + LogKeys.EXCEPTION + "\":\"" + e.getMessage() + "\"}";
+            return "{\"" + LogKeys.ERROR_STACK_TRACE + "\":\"" + e.getMessage() + "\"}";
         }
     }
 

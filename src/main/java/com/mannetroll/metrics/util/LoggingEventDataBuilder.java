@@ -34,7 +34,7 @@ public class LoggingEventDataBuilder {
 			boolean b3TracingInfo, boolean sort) {
 		final Map<String, Object> map;
 		if (sort) {
-			map = new TreeMap<>();			
+			map = new TreeMap<>();
 		} else {
 			map = new LinkedHashMap<>();
 		}
@@ -94,7 +94,9 @@ public class LoggingEventDataBuilder {
 
 		Throwable throwable = event.getThrown();
 		if (throwable != null) {
-			map.put(LogKeys.EXCEPTION, getStackTrace(throwable));
+			map.put(LogKeys.ERROR_MESSAGE, throwable.getMessage());
+			map.put(LogKeys.ERROR_STACK_TRACE, getStackTrace(throwable));
+			map.put(LogKeys.ERROR_TYPE, throwable.getClass().getName());
 		}
 
 		StackTraceElement stackTraceElement = event.getSource();
