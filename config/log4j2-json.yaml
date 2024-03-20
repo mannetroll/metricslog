@@ -1,15 +1,15 @@
 Configuration:
-  status: warn
-  
-  Appenders:
-    Console:
-      name: Console_Appender
-      target: SYSTEM_OUT
-      JsonTemplateLayout:
-        eventTemplateUri: classpath:LogTemplates/JsonTemplate.json
+   status: warn
 
-  Loggers:
-    Root:
-      level: info
-      AppenderRef:
-        - ref: Console_Appender
+   Appenders:
+      Console:
+         name: Console_Appender
+         target: SYSTEM_OUT
+         JsonTemplateLayout:
+            eventTemplateUri: classpath:JsonLayout.json
+
+   Loggers:
+      Root:
+         level: info
+         AppenderRef:
+         -  ref: Console_Appender

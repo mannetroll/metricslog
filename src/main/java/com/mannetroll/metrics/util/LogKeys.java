@@ -11,7 +11,7 @@ public class LogKeys {
 	public static final String THREAD = "thread";
 	public static final String DESCRIPTION = "description";
 	public static final String ELAPSED = "elapsed";
-	public static final String LEVEL = "level";
+	public static final String LOG_LEVEL = "log.level";
 	public static final String AT_TIMESTAMP = "@timestamp";
 	public static final String UPTIME = "uptime";
 	//
