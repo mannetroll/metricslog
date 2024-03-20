@@ -103,6 +103,12 @@
       <artifactId>jackson-datatype-joda</artifactId>
       <version>${jackson.version}</version>
     </dependency>
+    <dependency>
+      <groupId>co.elastic.logging</groupId>
+      <artifactId>log4j2-ecs-layout</artifactId>
+      <version>1.6.0</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
