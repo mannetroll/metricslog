@@ -20,6 +20,7 @@ public class LogKeys {
 	//
 	public static final String HTTP_REQUEST_METHOD = "http.request.method";
 	public static final String HTTP_RESPONSE_STATUS_CODE = "http.response.status_code";
+	public static final String HTTP_RESPONSE_TIME_MS = "http.response.time_ms";
 	public static final String USER_AGENT_NAME = "user_agent.name";
 	public static final String URL_FULL = "url.full";
 	public static final String URL_QUERY = "url.query";
@@ -44,7 +45,6 @@ public class LogKeys {
 	public static final String METRICS_ONEMINUTERATE = "metrics.oneminuterate";
 	public static final String METRICS_MEANRATE = "metrics.meanrate";
 	public static final String METRICS_COUNT = "metrics.count";
-	public static final String RESPONSETIME_MS = "responsetime_ms";
 	public static final String DELTAMINUTES = "delta_minutes";
 	//
 	public static final String NANOTIME = "nanotime";

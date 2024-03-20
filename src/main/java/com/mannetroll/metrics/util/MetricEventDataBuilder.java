@@ -32,7 +32,7 @@ public class MetricEventDataBuilder {
 			AppenderTimer timer = (AppenderTimer) AppenderMetricsManager.getAppenderTimer(metrics_name);
 			// Register start with nanotime OR elapsed with responsetime_ms
 			String nanotimeStr = getMDCString(LogKeys.NANOTIME, event);
-			String responsetime_msStr = getMDCString(LogKeys.RESPONSETIME_MS, event);
+			String responsetime_msStr = getMDCString(LogKeys.HTTP_RESPONSE_TIME_MS, event);
 			if (nanotimeStr != null) {
 				long nanotime = Long.parseLong(nanotimeStr);
 				long responsetime_ns = timer.timestartstop(nanotime, System.nanoTime());
@@ -50,13 +50,13 @@ public class MetricEventDataBuilder {
 	private void addToJSON(Map<String, Object> tmp, AppenderTimer timer, long responsetime_ns, LogEvent event) {
 		tmp.put(LogKeys.TYPE, METRICS);
 		tmp.put(LogKeys.HTTP_RESPONSE_STATUS_CODE, toInt(getMDCString(LogKeys.HTTP_RESPONSE_STATUS_CODE, event)));
+		tmp.put(LogKeys.HTTP_RESPONSE_TIME_MS, TimeUnit.NANOSECONDS.toMillis(responsetime_ns));
 		safePutValue(tmp, LogKeys.HTTP_REQUEST_METHOD, getMDCString(LogKeys.HTTP_REQUEST_METHOD, event));
 		safePutValue(tmp, LogKeys.DOMAIN, getMDCString(LogKeys.DOMAIN, event));
 		safePutValue(tmp, LogKeys.URL_PATH, getMDCString(LogKeys.URL_PATH, event));
 		safePutValue(tmp, LogKeys.URL_FULL, getMDCString(LogKeys.URL_FULL, event));
 		safePutValue(tmp, LogKeys.URL_QUERY, getMDCString(LogKeys.URL_QUERY, event));
 		safePutValue(tmp, LogKeys.USER_AGENT_NAME, getMDCString(LogKeys.USER_AGENT_NAME, event));
-		tmp.put(LogKeys.RESPONSETIME_MS, TimeUnit.NANOSECONDS.toMillis(responsetime_ns));
 		tmp.put(LogKeys.METRICS_COUNT, timer.getCount());
 		tmp.put(LogKeys.METRICS_MEANRATE, (float) timer.getMeanRate());
 		tmp.put(LogKeys.METRICS_ONEMINUTERATE, (float) timer.getOneMinuteRate());
