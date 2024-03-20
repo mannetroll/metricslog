@@ -7,6 +7,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
+import com.mannetroll.metrics.util.LogKeys;
+
 public class JsonLayoutTest {
 	private static final Logger LOG = LogManager.getLogger(JsonLayoutTest.class);
 
@@ -17,6 +19,7 @@ public class JsonLayoutTest {
 	@Test
 	public void test() throws ReflectiveOperationException {
 		Map<String, Object> tmp = new HashMap<String, Object>();
+		tmp.put(LogKeys.MESSAGE, "The message goes here!");
 		tmp.put("a_string", "hello");
 		tmp.put("a_number", 11L);
 		tmp.put("a_float", 1.1234F);

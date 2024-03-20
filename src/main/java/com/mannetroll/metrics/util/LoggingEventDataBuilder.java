@@ -9,6 +9,7 @@ import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -30,8 +31,13 @@ public class LoggingEventDataBuilder {
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Map<String, Object> getMap(LogEvent event, String application, String namespace, boolean locationInfo,
-			boolean b3TracingInfo) {
-		final Map<String, Object> map = new LinkedHashMap<>();
+			boolean b3TracingInfo, boolean sort) {
+		final Map<String, Object> map;
+		if (sort) {
+			map = new TreeMap<>();			
+		} else {
+			map = new LinkedHashMap<>();
+		}
 
 		// this GMT timestamp will propagate all the way to elastic
 		map.put(LogKeys.AT_TIMESTAMP, ZonedDateTime.now(ZoneOffset.UTC).toString());
@@ -61,7 +67,7 @@ public class LoggingEventDataBuilder {
 				stringify((Map<String, Object>) parameter, map);
 			}
 		} else {
-			map.put(LogKeys.DESCRIPTION, message.getFormattedMessage());
+			map.put(LogKeys.MESSAGE, message.getFormattedMessage());
 		}
 
 		String xrequestid = MDCUtils.getMDCString(Constants.X_REQUEST_ID, event);
@@ -71,7 +77,7 @@ public class LoggingEventDataBuilder {
 		}
 		map.put(Constants.X_REQUEST_ID, xrequestid);
 
-		map.put(LogKeys.THREAD, event.getThreadName());
+		map.put(LogKeys.PROCESS_THREAD_NAME, event.getThreadName());
 
 		if (event.getLoggerName() != null) {
 			map.put(LogKeys.LOG_LOGGER, event.getLoggerName());

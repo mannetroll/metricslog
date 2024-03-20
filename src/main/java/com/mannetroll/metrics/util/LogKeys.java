@@ -5,15 +5,16 @@ package com.mannetroll.metrics.util;
  */
 public class LogKeys {
 	public static final String AT_TIMESTAMP = "@timestamp";
+	public static final String LOG_LEVEL = "log.level";
+	public static final String LOG_LOGGER = "log.logger";
+	public static final String MESSAGE = "message";
+	public static final String PROCESS_THREAD_NAME = "process.thread.name";
+	//
 	public static final String LOCATION = "location";
 	public static final String EXCEPTION = "exception";
 	public static final String APPLICATION = "application";
 	public static final String SYSTEMNAME = "systemname";
-	public static final String THREAD = "thread";
-	public static final String DESCRIPTION = "description";
 	public static final String ELAPSED = "elapsed";
-	public static final String LOG_LEVEL = "log.level";
-	public static final String LOG_LOGGER = "log.logger";	
 	public static final String UPTIME = "uptime";
 	//
 	public static final String _999THPERCENTILE = "999thpercentile";

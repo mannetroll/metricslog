@@ -8,6 +8,7 @@ Configuration:
             namespace: mannetroll
             locationInfo: true
             osInfo: true
+            sort: true            
    Loggers:
       Root:
          level: info
