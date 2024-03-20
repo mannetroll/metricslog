@@ -101,7 +101,7 @@ public class LoggingEventDataBuilder {
 
 		StackTraceElement stackTraceElement = event.getSource();
 		if (locationInfo && stackTraceElement != null) {
-			map.put(LogKeys.LOCATION, stackTraceElement.toString());
+			map.put(LogKeys.LOG_ORIGIN_FILE, stackTraceElement.toString());
 		}
 
 		// B3 Tracing

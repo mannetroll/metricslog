@@ -1,18 +1,18 @@
 {
-  "@timestamp" : "2024-03-20T19:52:48.762813Z",
+  "@timestamp" : "2024-03-20T20:03:04.453315Z",
   "application" : "myapp",
   "error.message" : "hello?",
   "error.stack_trace" : "java.lang.RuntimeException: hello?\n\tat com.mannetroll.metrics.logger.JsonLayoutExceptionTest.test(JsonLayoutExceptionTest.java:12)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\n\tat org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)\n\tat org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)\n\tat org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)\n\tat org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)\n\tat org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)\n\tat org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:236)\n\tat org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:93)\n\tat org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40)\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:529)\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:756)\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:452)\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210)\n",
   "error.type" : "java.lang.RuntimeException",
-  "location" : "com.mannetroll.metrics.logger.JsonLayoutExceptionTest.test(JsonLayoutExceptionTest.java:13)",
   "log.level" : "INFO",
   "log.logger" : "com.mannetroll.metrics.logger.JsonLayoutExceptionTest",
+  "log.origin.file" : "com.mannetroll.metrics.logger.JsonLayoutExceptionTest.test(JsonLayoutExceptionTest.java:13)",
   "mannetroll" : {
     "systemname" : "myapp"
   },
   "message" : "Something went wrong!",
   "process.thread.name" : "main",
-  "process.uptime" : 257,
+  "process.uptime" : 228,
   "type" : "common",
-  "xrequestid" : "bd982abea51b444db46946e8dbe016bc"
+  "xrequestid" : "41c704d4fb0d4a57810e490d2e74649b"
 }

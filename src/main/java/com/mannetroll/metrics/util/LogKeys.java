@@ -10,6 +10,7 @@ public class LogKeys {
 	public static final String AT_TIMESTAMP = "@timestamp";
 	public static final String LOG_LEVEL = "log.level";
 	public static final String LOG_LOGGER = "log.logger";
+	public static final String LOG_ORIGIN_FILE = "log.origin.file";
 	public static final String MESSAGE = "message";
 	public static final String PROCESS_THREAD_NAME = "process.thread.name";
 	public static final String PROCESS_UPTIME = "process.uptime";
@@ -17,7 +18,6 @@ public class LogKeys {
 	public static final String ERROR_STACK_TRACE = "error.stack_trace";
 	public static final String ERROR_TYPE = "error.type";
 	//
-	public static final String LOCATION = "location";
 	public static final String APPLICATION = "application";
 	public static final String SYSTEMNAME = "systemname";
 	public static final String ELAPSED = "elapsed";
