@@ -57,7 +57,7 @@ public class MetricEventDataBuilder {
 		safePutValue(tmp, LogKeys.RESPONSE_BODY, getMDCString(LogKeys.RESPONSE_BODY, event));
 		safePutValue(tmp, LogKeys.HTTP_REQUEST_METHOD, getMDCString(LogKeys.HTTP_REQUEST_METHOD, event));
 		safePutValue(tmp, LogKeys.QUERY, getMDCString(LogKeys.REQUEST_QUERY, event));
-		safePutValue(tmp, LogKeys.USERAGENT, getMDCString(LogKeys.REQUEST_USER_AGENT, event));
+		safePutValue(tmp, LogKeys.USER_AGENT_NAME, getMDCString(LogKeys.USER_AGENT_NAME, event));
 		tmp.put(LogKeys.RESPONSETIME_MS, TimeUnit.NANOSECONDS.toMillis(responsetime_ns));
 		tmp.put(LogKeys.COUNT, timer.getCount());
 		tmp.put(LogKeys.MEANRATE, (float) timer.getMeanRate());

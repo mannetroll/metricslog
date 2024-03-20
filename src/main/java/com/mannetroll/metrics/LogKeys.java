@@ -20,6 +20,7 @@ public class LogKeys {
 	//
 	public static final String HTTP_REQUEST_METHOD = "http.request.method";
 	public static final String HTTP_RESPONSE_STATUS_CODE = "http.response.status_code";
+	public static final String USER_AGENT_NAME = "user_agent.name";
 	//
 	public static final String APPLICATION = "application";
 	public static final String SYSTEMNAME = "systemname";
@@ -40,7 +41,6 @@ public class LogKeys {
 	public static final String MEANRATE = "meanrate";
 	public static final String COUNT = "count";
 	public static final String RESPONSETIME_MS = "responsetime_ms";
-	public static final String USERAGENT = "useragent";
 	public static final String QUERY = "query";
 	public static final String METHOD = "method";
 	public static final String URL = "url";
@@ -55,7 +55,6 @@ public class LogKeys {
 	public static final String METRICS_NAME = "metrics_name";
 	//
 	public static final String REQUEST_REMOTE_HOST = "request_remote_host";
-	public static final String REQUEST_USER_AGENT = "request_user_agent";
 	public static final String REQUEST_URI = "request_URI";
 	public static final String REQUEST_QUERY = "request_query";
 	public static final String REQUEST_URL = "request_URL";
