@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.core.LogEvent;
 
 import com.codahale.metrics.Snapshot;
+import com.mannetroll.metrics.LogKeys;
 import com.mannetroll.metrics.codahale.AppenderMetricsManager;
 import com.mannetroll.metrics.codahale.AppenderTimer;
 

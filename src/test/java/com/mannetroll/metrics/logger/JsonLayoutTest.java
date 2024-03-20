@@ -7,7 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
-import com.mannetroll.metrics.util.LogKeys;
+import com.mannetroll.metrics.LogKeys;
 
 public class JsonLayoutTest {
 	private static final Logger LOG = LogManager.getLogger(JsonLayoutTest.class);

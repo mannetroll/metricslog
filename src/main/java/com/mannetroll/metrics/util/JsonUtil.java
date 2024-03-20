@@ -3,6 +3,7 @@ package com.mannetroll.metrics.util;
 import java.util.Map;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mannetroll.metrics.LogKeys;
 
 /**
  * @author mannetroll
