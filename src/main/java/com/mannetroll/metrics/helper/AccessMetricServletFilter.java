@@ -46,7 +46,7 @@ public class AccessMetricServletFilter implements Filter {
 			insertIntoMDC(request);
 			chain.doFilter(request, responseWrapper);
 			String status = String.valueOf(responseWrapper.getStatus());
-			safePutValue(LogKeys.RESPONSE_STATUS, status);
+			safePutValue(LogKeys.HTTP_RESPONSE_STATUS_CODE, status);
 			// append status code to metrics name
 			String metrics_name = MDC.get(LogKeys.METRICS_NAME);
 			setMetricsName(request, status, metrics_name);

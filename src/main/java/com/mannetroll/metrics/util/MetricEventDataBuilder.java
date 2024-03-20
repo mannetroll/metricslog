@@ -49,7 +49,7 @@ public class MetricEventDataBuilder {
 
 	private void addToJSON(Map<String, Object> tmp, AppenderTimer timer, long responsetime_ns, LogEvent event) {
 		tmp.put(LogKeys.TYPE, METRICS);
-		tmp.put(LogKeys.HTTP_RESPONSE_STATUS_CODE, toInt(getMDCString(LogKeys.RESPONSE_STATUS, event)));
+		tmp.put(LogKeys.HTTP_RESPONSE_STATUS_CODE, toInt(getMDCString(LogKeys.HTTP_RESPONSE_STATUS_CODE, event)));
 		safePutValue(tmp, LogKeys.DOMAIN, getMDCString(LogKeys.DOMAIN, event));
 		safePutValue(tmp, LogKeys.URL_PATH, getMDCString(LogKeys.URL_PATH, event));
 		safePutValue(tmp, LogKeys.URL_FULL, getMDCString(LogKeys.URL_FULL, event));

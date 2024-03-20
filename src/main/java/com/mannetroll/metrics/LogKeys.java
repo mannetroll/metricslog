@@ -56,7 +56,6 @@ public class LogKeys {
 	//
 	public static final String REQUEST_REMOTE_HOST = "request_remote_host";
 	public static final String REQUEST_X_FORWARDED_FOR = "request_x_forwarded_for";
-	public static final String RESPONSE_STATUS = "response_status";
 	public static final String ACCESS_FILTER_RE = "AccessFilter.RuntimeException";
 	public static final String ACCESS_FILTER_SE = "AccessFilter.ServletException";
 	public static final String ACCESS_FILTER_IO = "AccessFilter.IOException";
