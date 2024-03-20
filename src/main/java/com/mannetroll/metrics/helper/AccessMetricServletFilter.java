@@ -96,7 +96,7 @@ public class AccessMetricServletFilter implements Filter {
 		if (requestURL != null) {
 			safePutValue(LogKeys.REQUEST_URL, requestURL.toString());
 		}
-		safePutValue(LogKeys.REQUEST_METHOD, httpRequest.getMethod());
+		safePutValue(LogKeys.HTTP_REQUEST_METHOD, httpRequest.getMethod());
 		safePutValue(LogKeys.REQUEST_QUERY, httpRequest.getQueryString());
 		safePutValue(LogKeys.REQUEST_USER_AGENT, httpRequest.getHeader(LogKeys.HTTP_USER_AGENT));
 		safePutValue(LogKeys.REQUEST_X_FORWARDED_FOR, httpRequest.getHeader(LogKeys.HTTP_X_FORWARDED_FOR));

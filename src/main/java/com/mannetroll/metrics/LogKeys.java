@@ -18,6 +18,9 @@ public class LogKeys {
 	public static final String ERROR_STACK_TRACE = "error.stack_trace";
 	public static final String ERROR_TYPE = "error.type";
 	//
+	public static final String HTTP_REQUEST_METHOD = "http.request.method";
+	public static final String HTTP_RESPONSE_STATUS_CODE = "http.response.status_code";
+	//
 	public static final String APPLICATION = "application";
 	public static final String SYSTEMNAME = "systemname";
 	public static final String ELAPSED = "elapsed";
@@ -40,12 +43,10 @@ public class LogKeys {
 	public static final String USERAGENT = "useragent";
 	public static final String QUERY = "query";
 	public static final String METHOD = "method";
-	public static final String VERB = "verb";
 	public static final String URL = "url";
 	public static final String URI = "uri";
 	public static final String REQUEST_BODY = "request_body";
 	public static final String RESPONSE_BODY = "response_body";
-	public static final String STATUS = "status";
 	public static final String TYPE = "type";
 	public static final String DOMAIN = "domain";
 	public static final String DELTAMINUTES = "delta_minutes";
@@ -58,7 +59,6 @@ public class LogKeys {
 	public static final String REQUEST_URI = "request_URI";
 	public static final String REQUEST_QUERY = "request_query";
 	public static final String REQUEST_URL = "request_URL";
-	public static final String REQUEST_METHOD = "request_method";
 	public static final String REQUEST_X_FORWARDED_FOR = "request_x_forwarded_for";
 	public static final String RESPONSE_STATUS = "response_status";
 	public static final String ACCESS_FILTER_RE = "AccessFilter.RuntimeException";
