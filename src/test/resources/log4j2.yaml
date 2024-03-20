@@ -1,13 +1,15 @@
 Configuration:
-   Appenders:
-      Console:
-         name: ConsoleAppender
-         target: SYSTEM_OUT
-         MetricJsonLayout:
-            locationInfo: true
-            osInfo: true
-   Loggers:
-      Root:
-         level: info
-         AppenderRef:
-         -  ref: ConsoleAppender
+  Appenders:
+    Console:
+      name: ConsoleAppender
+      target: SYSTEM_OUT
+      MetricJsonLayout:
+        application: myapp
+        namespace: mannetroll        
+        locationInfo: true
+        osInfo: true
+  Loggers:
+    Root:
+      level: info
+      AppenderRef:
+        - ref: ConsoleAppender
