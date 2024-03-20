@@ -11,7 +11,6 @@ import org.apache.logging.log4j.core.LogEvent;
 import com.codahale.metrics.Snapshot;
 import com.mannetroll.metrics.codahale.AppenderMetricsManager;
 import com.mannetroll.metrics.codahale.AppenderTimer;
-import com.mannetroll.metrics.helper.Constants;
 
 /**
  * @author mannetroll
@@ -26,13 +25,13 @@ public class MetricEventDataBuilder {
 				b3TracingInfo, sort);
 		//
 		// Add Metrics Event data
-		String metrics_name = getMDCString(Constants.METRICS_NAME, event);
+		String metrics_name = getMDCString(LogKeys.METRICS_NAME, event);
 		// check if MDC info from AccessMetricServletFilter exists
 		if (metrics_name != null) {
 			AppenderTimer timer = (AppenderTimer) AppenderMetricsManager.getAppenderTimer(metrics_name);
 			// Register start with nanotime OR elapsed with responsetime_ms
-			String nanotimeStr = getMDCString(Constants.NANOTIME, event);
-			String responsetime_msStr = getMDCString(Constants.RESPONSETIME_MS, event);
+			String nanotimeStr = getMDCString(LogKeys.NANOTIME, event);
+			String responsetime_msStr = getMDCString(LogKeys.RESPONSETIME_MS, event);
 			if (nanotimeStr != null) {
 				long nanotime = Long.parseLong(nanotimeStr);
 				long responsetime_ns = timer.timestartstop(nanotime, System.nanoTime());
@@ -49,15 +48,15 @@ public class MetricEventDataBuilder {
 
 	private void addToJSON(Map<String, Object> tmp, AppenderTimer timer, long responsetime_ns, LogEvent event) {
 		tmp.put(LogKeys.TYPE, METRICS);
-		tmp.put(LogKeys.STATUS, toInt(getMDCString(Constants.RESPONSE_STATUS, event)));
-		safePutValue(tmp, LogKeys.DOMAIN, getMDCString(Constants.DOMAIN, event));
-		safePutValue(tmp, LogKeys.URI, getMDCString(Constants.REQUEST_URI, event));
-		safePutValue(tmp, LogKeys.URL, getMDCString(Constants.REQUEST_URL, event));
-		safePutValue(tmp, LogKeys.REQUEST_BODY, getMDCString(Constants.REQUEST_BODY, event));
-		safePutValue(tmp, LogKeys.RESPONSE_BODY, getMDCString(Constants.RESPONSE_BODY, event));
-		safePutValue(tmp, LogKeys.VERB, getMDCString(Constants.REQUEST_METHOD, event));
-		safePutValue(tmp, LogKeys.QUERY, getMDCString(Constants.REQUEST_QUERY, event));
-		safePutValue(tmp, LogKeys.USERAGENT, getMDCString(Constants.REQUEST_USER_AGENT, event));
+		tmp.put(LogKeys.STATUS, toInt(getMDCString(LogKeys.RESPONSE_STATUS, event)));
+		safePutValue(tmp, LogKeys.DOMAIN, getMDCString(LogKeys.DOMAIN, event));
+		safePutValue(tmp, LogKeys.URI, getMDCString(LogKeys.REQUEST_URI, event));
+		safePutValue(tmp, LogKeys.URL, getMDCString(LogKeys.REQUEST_URL, event));
+		safePutValue(tmp, LogKeys.REQUEST_BODY, getMDCString(LogKeys.REQUEST_BODY, event));
+		safePutValue(tmp, LogKeys.RESPONSE_BODY, getMDCString(LogKeys.RESPONSE_BODY, event));
+		safePutValue(tmp, LogKeys.VERB, getMDCString(LogKeys.REQUEST_METHOD, event));
+		safePutValue(tmp, LogKeys.QUERY, getMDCString(LogKeys.REQUEST_QUERY, event));
+		safePutValue(tmp, LogKeys.USERAGENT, getMDCString(LogKeys.REQUEST_USER_AGENT, event));
 		tmp.put(LogKeys.RESPONSETIME_MS, TimeUnit.NANOSECONDS.toMillis(responsetime_ns));
 		tmp.put(LogKeys.COUNT, timer.getCount());
 		tmp.put(LogKeys.MEANRATE, (float) timer.getMeanRate());

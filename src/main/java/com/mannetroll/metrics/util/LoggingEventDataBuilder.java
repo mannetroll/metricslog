@@ -20,8 +20,6 @@ import org.apache.logging.log4j.message.MapMessage;
 import org.apache.logging.log4j.message.Message;
 import org.apache.logging.log4j.message.ObjectMessage;
 
-import com.mannetroll.metrics.helper.Constants;
-
 /**
  * @author mannetroll
  */
@@ -46,12 +44,12 @@ public class LoggingEventDataBuilder {
 		map.put(LogKeys.PROCESS_UPTIME, (System.currentTimeMillis() - uptime));
 
 		// AVU String Extra
-		MDCUtils.safePutValue(map, LogKeys.DOMAIN, MDCUtils.getMDCString(Constants.DOMAIN, event));
-		MDCUtils.safePutValue(map, LogKeys.METHOD, MDCUtils.getMDCString(Constants.JAVA_METHOD, event));
+		MDCUtils.safePutValue(map, LogKeys.DOMAIN, MDCUtils.getMDCString(LogKeys.DOMAIN, event));
+		MDCUtils.safePutValue(map, LogKeys.METHOD, MDCUtils.getMDCString(LogKeys.JAVA_METHOD, event));
 		// AVU Long Extra
 		MDCUtils.safePutValue(map, LogKeys.DELTAMINUTES, MDCUtils.getMDCLong(LogKeys.DELTAMINUTES, event));
 
-		String start = MDCUtils.getMDCString(Constants.NANOTIME, event);
+		String start = MDCUtils.getMDCString(LogKeys.NANOTIME, event);
 		if (start != null) {
 			long nanotime = Long.parseLong(start);
 			long elapsed = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - nanotime);
@@ -70,12 +68,12 @@ public class LoggingEventDataBuilder {
 			map.put(LogKeys.MESSAGE, message.getFormattedMessage());
 		}
 
-		String xrequestid = MDCUtils.getMDCString(Constants.X_REQUEST_ID, event);
+		String xrequestid = MDCUtils.getMDCString(LogKeys.X_REQUEST_ID, event);
 		if (xrequestid == null) {
 			xrequestid = UUID.randomUUID().toString().replaceAll("-", "");
-			ThreadContext.put(Constants.X_REQUEST_ID, xrequestid);
+			ThreadContext.put(LogKeys.X_REQUEST_ID, xrequestid);
 		}
-		map.put(Constants.X_REQUEST_ID, xrequestid);
+		map.put(LogKeys.X_REQUEST_ID, xrequestid);
 
 		map.put(LogKeys.PROCESS_THREAD_NAME, event.getThreadName());
 
@@ -106,10 +104,10 @@ public class LoggingEventDataBuilder {
 
 		// B3 Tracing
 		if (b3TracingInfo) {
-			MDCUtils.safePutValue(map, Constants.B3_X_TRACEID, MDCUtils.getMDCString(Constants.B3_X_TRACEID, event));
-			MDCUtils.safePutValue(map, Constants.B3_X_SPANID, MDCUtils.getMDCString(Constants.B3_X_SPANID, event));
-			MDCUtils.safePutValue(map, Constants.B3_X_PARENTSPANID,
-					MDCUtils.getMDCString(Constants.B3_X_PARENTSPANID, event));
+			MDCUtils.safePutValue(map, LogKeys.B3_X_TRACEID, MDCUtils.getMDCString(LogKeys.B3_X_TRACEID, event));
+			MDCUtils.safePutValue(map, LogKeys.B3_X_SPANID, MDCUtils.getMDCString(LogKeys.B3_X_SPANID, event));
+			MDCUtils.safePutValue(map, LogKeys.B3_X_PARENTSPANID,
+					MDCUtils.getMDCString(LogKeys.B3_X_PARENTSPANID, event));
 		}
 		return map;
 	}

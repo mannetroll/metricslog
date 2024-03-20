@@ -18,6 +18,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 
+import com.mannetroll.metrics.util.LogKeys;
+
 /**
  * A servlet filter that inserts various values retrieved from the incoming http
  * request into the MDC.
@@ -44,31 +46,31 @@ public class AccessMetricServletFilter implements Filter {
 			insertIntoMDC(request);
 			chain.doFilter(request, responseWrapper);
 			String status = String.valueOf(responseWrapper.getStatus());
-			safePutValue(Constants.RESPONSE_STATUS, status);
+			safePutValue(LogKeys.RESPONSE_STATUS, status);
 			// append status code to metrics name
-			String metrics_name = MDC.get(Constants.METRICS_NAME);
+			String metrics_name = MDC.get(LogKeys.METRICS_NAME);
 			setMetricsName(request, status, metrics_name);
-			logger.info(Constants.ACCESS_FILTER_OK);
+			logger.info(LogKeys.ACCESS_FILTER_OK);
 		} catch (IOException e) {
 			// append status code to metrics name
-			String metrics_name = MDC.get(Constants.METRICS_NAME);
+			String metrics_name = MDC.get(LogKeys.METRICS_NAME);
 			String status = String.valueOf(responseWrapper.getStatus());
 			setMetricsName(request, status, metrics_name);
-			logger.info(Constants.ACCESS_FILTER_IO, e);
+			logger.info(LogKeys.ACCESS_FILTER_IO, e);
 			throw e;
 		} catch (ServletException e) {
 			// append status code to metrics name
-			String metrics_name = MDC.get(Constants.METRICS_NAME);
+			String metrics_name = MDC.get(LogKeys.METRICS_NAME);
 			String status = String.valueOf(responseWrapper.getStatus());
 			setMetricsName(request, status, metrics_name);
-			logger.info(Constants.ACCESS_FILTER_SE, e);
+			logger.info(LogKeys.ACCESS_FILTER_SE, e);
 			throw e;
 		} catch (RuntimeException e) {
 			// append status code to metrics name
-			String metrics_name = MDC.get(Constants.METRICS_NAME);
+			String metrics_name = MDC.get(LogKeys.METRICS_NAME);
 			String status = String.valueOf(responseWrapper.getStatus());
 			setMetricsName(request, status, metrics_name);
-			logger.info(Constants.ACCESS_FILTER_RE, e);
+			logger.info(LogKeys.ACCESS_FILTER_RE, e);
 			throw e;
 		} finally {
 			clearMDC();
@@ -78,31 +80,31 @@ public class AccessMetricServletFilter implements Filter {
 
 	private void setMetricsName(HttpServletRequest request, String status, String metrics_name) {
 		if (metrics_name != null) {
-			safePutValue(Constants.METRICS_NAME, metrics_name + DOT + status);
+			safePutValue(LogKeys.METRICS_NAME, metrics_name + DOT + status);
 		} else {
-			safePutValue(Constants.METRICS_NAME, request.getRequestURI() + DOT + status);
+			safePutValue(LogKeys.METRICS_NAME, request.getRequestURI() + DOT + status);
 		}
 	}
 
 	void insertIntoMDC(ServletRequest request) {
-		MDC.put(Constants.NANOTIME, String.valueOf(System.nanoTime()));
-		MDC.put(Constants.REQUEST_REMOTE_HOST, request.getRemoteHost());
+		MDC.put(LogKeys.NANOTIME, String.valueOf(System.nanoTime()));
+		MDC.put(LogKeys.REQUEST_REMOTE_HOST, request.getRemoteHost());
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		String requestURI = httpRequest.getRequestURI();
-		safePutValue(Constants.REQUEST_URI, requestURI);
+		safePutValue(LogKeys.REQUEST_URI, requestURI);
 		StringBuffer requestURL = httpRequest.getRequestURL();
 		if (requestURL != null) {
-			safePutValue(Constants.REQUEST_URL, requestURL.toString());
+			safePutValue(LogKeys.REQUEST_URL, requestURL.toString());
 		}
-		safePutValue(Constants.REQUEST_METHOD, httpRequest.getMethod());
-		safePutValue(Constants.REQUEST_QUERY, httpRequest.getQueryString());
-		safePutValue(Constants.REQUEST_USER_AGENT, httpRequest.getHeader(Constants.HTTP_USER_AGENT));
-		safePutValue(Constants.REQUEST_X_FORWARDED_FOR, httpRequest.getHeader(Constants.HTTP_X_FORWARDED_FOR));
-		String xrequestid = httpRequest.getHeader(Constants.HTTP_X_REQUEST_ID);
+		safePutValue(LogKeys.REQUEST_METHOD, httpRequest.getMethod());
+		safePutValue(LogKeys.REQUEST_QUERY, httpRequest.getQueryString());
+		safePutValue(LogKeys.REQUEST_USER_AGENT, httpRequest.getHeader(LogKeys.HTTP_USER_AGENT));
+		safePutValue(LogKeys.REQUEST_X_FORWARDED_FOR, httpRequest.getHeader(LogKeys.HTTP_X_FORWARDED_FOR));
+		String xrequestid = httpRequest.getHeader(LogKeys.HTTP_X_REQUEST_ID);
 		if (xrequestid == null) {
 			xrequestid = UUID.randomUUID().toString().replaceAll("-", "");
 		}
-		MDC.put(Constants.X_REQUEST_ID, xrequestid);
+		MDC.put(LogKeys.X_REQUEST_ID, xrequestid);
 	}
 
 	private void safePutValue(String key, String value) {
