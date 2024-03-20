@@ -7,7 +7,6 @@ Configuration:
             application: myapp
             namespace: mannetroll
             locationInfo: true
-            osInfo: true
             sort: true            
    Loggers:
       Root:
