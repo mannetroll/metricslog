@@ -91,7 +91,7 @@ public class AccessMetricServletFilter implements Filter {
 		MDC.put(LogKeys.REQUEST_REMOTE_HOST, request.getRemoteHost());
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		String requestURI = httpRequest.getRequestURI();
-		safePutValue(LogKeys.REQUEST_URI, requestURI);
+		safePutValue(LogKeys.URL_PATH, requestURI);
 		StringBuffer requestURL = httpRequest.getRequestURL();
 		if (requestURL != null) {
 			safePutValue(LogKeys.URL_FULL, requestURL.toString());
