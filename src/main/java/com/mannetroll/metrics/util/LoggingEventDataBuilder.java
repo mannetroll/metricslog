@@ -74,7 +74,7 @@ public class LoggingEventDataBuilder {
 		map.put(LogKeys.THREAD, event.getThreadName());
 
 		if (event.getLoggerName() != null) {
-			map.put("loggername", event.getLoggerName());
+			map.put(LogKeys.LOG_LOGGER, event.getLoggerName());
 		}
 
 		if (application != null) {

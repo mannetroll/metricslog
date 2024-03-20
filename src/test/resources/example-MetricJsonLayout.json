@@ -1,15 +1,15 @@
 {
-  "@timestamp" : "2024-03-20T18:04:01.484813Z",
-  "level" : "INFO",
+  "@timestamp" : "2024-03-20T19:08:11.083250Z",
+  "log.level" : "INFO",
   "type" : "common",
-  "uptime" : 241,
+  "uptime" : 238,
   "a_boolean" : true,
   "a_float" : 1.1234,
   "a_string" : "hello",
   "a_number" : 11,
-  "xrequestid" : "262e810fb2ca41eba809c5776018544a",
+  "xrequestid" : "7276d2fafee14dad933b63779a642ccb",
   "thread" : "main",
-  "loggername" : "com.mannetroll.metrics.logger.JsonLayoutTest",
+  "log.logger" : "com.mannetroll.metrics.logger.JsonLayoutTest",
   "application" : "myapp",
   "mannetroll" : {
     "systemname" : "myapp"

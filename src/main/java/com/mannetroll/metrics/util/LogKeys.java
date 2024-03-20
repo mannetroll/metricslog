@@ -4,6 +4,7 @@ package com.mannetroll.metrics.util;
  * @author mannetroll
  */
 public class LogKeys {
+	public static final String AT_TIMESTAMP = "@timestamp";
 	public static final String LOCATION = "location";
 	public static final String EXCEPTION = "exception";
 	public static final String APPLICATION = "application";
@@ -12,7 +13,7 @@ public class LogKeys {
 	public static final String DESCRIPTION = "description";
 	public static final String ELAPSED = "elapsed";
 	public static final String LOG_LEVEL = "log.level";
-	public static final String AT_TIMESTAMP = "@timestamp";
+	public static final String LOG_LOGGER = "log.logger";	
 	public static final String UPTIME = "uptime";
 	//
 	public static final String _999THPERCENTILE = "999thpercentile";
