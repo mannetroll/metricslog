@@ -57,21 +57,21 @@ public class MetricEventDataBuilder {
 		safePutValue(tmp, LogKeys.URL_QUERY, getMDCString(LogKeys.URL_QUERY, event));
 		safePutValue(tmp, LogKeys.USER_AGENT_NAME, getMDCString(LogKeys.USER_AGENT_NAME, event));
 		tmp.put(LogKeys.RESPONSETIME_MS, TimeUnit.NANOSECONDS.toMillis(responsetime_ns));
-		tmp.put(LogKeys.COUNT, timer.getCount());
-		tmp.put(LogKeys.MEANRATE, (float) timer.getMeanRate());
-		tmp.put(LogKeys.ONEMINUTERATE, (float) timer.getOneMinuteRate());
-		tmp.put(LogKeys.FIVEMINUTERATE, (float) timer.getFiveMinuteRate());
-		tmp.put(LogKeys.FIFTEENMINUTERATE, (float) timer.getFifteenMinuteRate());
+		tmp.put(LogKeys.METRICS_COUNT, timer.getCount());
+		tmp.put(LogKeys.METRICS_MEANRATE, (float) timer.getMeanRate());
+		tmp.put(LogKeys.METRICS_ONEMINUTERATE, (float) timer.getOneMinuteRate());
+		tmp.put(LogKeys.METRICS_FIVEMINUTERATE, (float) timer.getFiveMinuteRate());
+		tmp.put(LogKeys.METRICS_FIFTEENMINUTERATE, (float) timer.getFifteenMinuteRate());
 		Snapshot snapshot = timer.getSnapshot();
-		tmp.put(LogKeys.MEAN, TimeUnit.NANOSECONDS.toMillis((long) snapshot.getMean()));
-		tmp.put(LogKeys.MEDIAN, TimeUnit.NANOSECONDS.toMillis((long) snapshot.getMedian()));
-		tmp.put(LogKeys.MAX, TimeUnit.NANOSECONDS.toMillis(snapshot.getMax()));
-		tmp.put(LogKeys.MIN, TimeUnit.NANOSECONDS.toMillis(snapshot.getMin()));
-		tmp.put(LogKeys.STD, TimeUnit.NANOSECONDS.toMillis((long) snapshot.getStdDev()));
-		tmp.put(LogKeys._75THPERCENTILE, TimeUnit.NANOSECONDS.toMillis((long) snapshot.get75thPercentile()));
-		tmp.put(LogKeys._95THPERCENTILE, TimeUnit.NANOSECONDS.toMillis((long) snapshot.get95thPercentile()));
-		tmp.put(LogKeys._99THPERCENTILE, TimeUnit.NANOSECONDS.toMillis((long) snapshot.get99thPercentile()));
-		tmp.put(LogKeys._999THPERCENTILE, TimeUnit.NANOSECONDS.toMillis((long) snapshot.get999thPercentile()));
+		tmp.put(LogKeys.METRICS_MEAN, TimeUnit.NANOSECONDS.toMillis((long) snapshot.getMean()));
+		tmp.put(LogKeys.METRICS_MEDIAN, TimeUnit.NANOSECONDS.toMillis((long) snapshot.getMedian()));
+		tmp.put(LogKeys.METRICS_MAX, TimeUnit.NANOSECONDS.toMillis(snapshot.getMax()));
+		tmp.put(LogKeys.METRICS_MIN, TimeUnit.NANOSECONDS.toMillis(snapshot.getMin()));
+		tmp.put(LogKeys.METRICS_STD, TimeUnit.NANOSECONDS.toMillis((long) snapshot.getStdDev()));
+		tmp.put(LogKeys.METRICS_75THPERCENTILE, TimeUnit.NANOSECONDS.toMillis((long) snapshot.get75thPercentile()));
+		tmp.put(LogKeys.METRICS_95THPERCENTILE, TimeUnit.NANOSECONDS.toMillis((long) snapshot.get95thPercentile()));
+		tmp.put(LogKeys.METRICS_99THPERCENTILE, TimeUnit.NANOSECONDS.toMillis((long) snapshot.get99thPercentile()));
+		tmp.put(LogKeys.METRICS_999THPERCENTILE, TimeUnit.NANOSECONDS.toMillis((long) snapshot.get999thPercentile()));
 		// Runtime
 		tmp.put("memfree", Runtime.getRuntime().freeMemory());
 	}

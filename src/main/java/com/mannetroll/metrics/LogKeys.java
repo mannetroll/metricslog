@@ -29,25 +29,25 @@ public class LogKeys {
 	public static final String SYSTEMNAME = "systemname";
 	public static final String ELAPSED = "elapsed";
 	//
-	public static final String _999THPERCENTILE = "999thpercentile";
-	public static final String _99THPERCENTILE = "99thpercentile";
-	public static final String _95THPERCENTILE = "95thpercentile";
-	public static final String _75THPERCENTILE = "75thpercentile";
-	public static final String STD = "std";
-	public static final String MIN = "min";
-	public static final String MAX = "max";
-	public static final String MEDIAN = "median";
-	public static final String MEAN = "mean";
-	public static final String FIFTEENMINUTERATE = "fifteenminuterate";
-	public static final String FIVEMINUTERATE = "fiveminuterate";
-	public static final String ONEMINUTERATE = "oneminuterate";
-	public static final String MEANRATE = "meanrate";
-	public static final String COUNT = "count";
+	public static final String METRICS_NAME = "metrics.name";
+	public static final String METRICS_999THPERCENTILE = "metrics.999thpercentile";
+	public static final String METRICS_99THPERCENTILE = "metrics.99thpercentile";
+	public static final String METRICS_95THPERCENTILE = "metrics.95thpercentile";
+	public static final String METRICS_75THPERCENTILE = "metrics.75thpercentile";
+	public static final String METRICS_STD = "metrics.std";
+	public static final String METRICS_MIN = "metrics.min";
+	public static final String METRICS_MAX = "metrics.max";
+	public static final String METRICS_MEDIAN = "metrics.median";
+	public static final String METRICS_MEAN = "metrics.mean";
+	public static final String METRICS_FIFTEENMINUTERATE = "metrics.fifteenminuterate";
+	public static final String METRICS_FIVEMINUTERATE = "metrics.fiveminuterate";
+	public static final String METRICS_ONEMINUTERATE = "metrics.oneminuterate";
+	public static final String METRICS_MEANRATE = "metrics.meanrate";
+	public static final String METRICS_COUNT = "metrics.count";
 	public static final String RESPONSETIME_MS = "responsetime_ms";
 	public static final String DELTAMINUTES = "delta_minutes";
 	//
 	public static final String NANOTIME = "nanotime";
-	public static final String METRICS_NAME = "metrics_name";
 	//
 	public static final String REQUEST_REMOTE_HOST = "request_remote_host";
 	public static final String REQUEST_X_FORWARDED_FOR = "request_x_forwarded_for";
