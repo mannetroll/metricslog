@@ -17,7 +17,7 @@ public class JsonLayoutTest {
 	//
 
 	@Test
-	public void test() throws ReflectiveOperationException {
+	public void test() {
 		Map<String, Object> tmp = new HashMap<String, Object>();
 		tmp.put(LogKeys.MESSAGE, "The message goes here!");
 		tmp.put("a_string", "hello");

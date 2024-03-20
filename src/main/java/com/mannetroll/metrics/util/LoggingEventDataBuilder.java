@@ -43,7 +43,7 @@ public class LoggingEventDataBuilder {
 		map.put(LogKeys.AT_TIMESTAMP, ZonedDateTime.now(ZoneOffset.UTC).toString());
 		map.put(LogKeys.LOG_LEVEL, event.getLevel().toString());
 		map.put(LogKeys.TYPE, COMMON);
-		map.put(LogKeys.UPTIME, (System.currentTimeMillis() - uptime));
+		map.put(LogKeys.PROCESS_UPTIME, (System.currentTimeMillis() - uptime));
 
 		// AVU String Extra
 		MDCUtils.safePutValue(map, LogKeys.DOMAIN, MDCUtils.getMDCString(Constants.DOMAIN, event));

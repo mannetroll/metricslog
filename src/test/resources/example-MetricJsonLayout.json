@@ -1,19 +1,19 @@
 {
-  "@timestamp" : "2024-03-20T19:24:55.271578Z",
-  "log.level" : "INFO",
-  "type" : "common",
-  "uptime" : 248,
+  "@timestamp" : "2024-03-20T19:31:37.817342Z",
   "a_boolean" : true,
   "a_float" : 1.1234,
-  "a_string" : "hello",
-  "message" : "The message goes here!",
   "a_number" : 11,
-  "xrequestid" : "53cd292744eb4507bdaade3da25ea584",
-  "process.thread.name" : "main",
-  "log.logger" : "com.mannetroll.metrics.logger.JsonLayoutTest",
+  "a_string" : "hello",
   "application" : "myapp",
+  "location" : "com.mannetroll.metrics.logger.JsonLayoutTest.test(JsonLayoutTest.java:27)",
+  "log.level" : "INFO",
+  "log.logger" : "com.mannetroll.metrics.logger.JsonLayoutTest",
   "mannetroll" : {
     "systemname" : "myapp"
   },
-  "location" : "com.mannetroll.metrics.logger.JsonLayoutTest.test(JsonLayoutTest.java:27)"
+  "message" : "The message goes here!",
+  "process.thread.name" : "main",
+  "process.uptime" : 240,
+  "type" : "common",
+  "xrequestid" : "e736d077b7454e94ade4c1ce3a6ac3b1"
 }
