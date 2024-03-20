@@ -52,11 +52,11 @@ public class MetricEventDataBuilder {
 		tmp.put(LogKeys.HTTP_RESPONSE_STATUS_CODE, toInt(getMDCString(LogKeys.RESPONSE_STATUS, event)));
 		safePutValue(tmp, LogKeys.DOMAIN, getMDCString(LogKeys.DOMAIN, event));
 		safePutValue(tmp, LogKeys.URI, getMDCString(LogKeys.REQUEST_URI, event));
-		safePutValue(tmp, LogKeys.URL, getMDCString(LogKeys.REQUEST_URL, event));
+		safePutValue(tmp, LogKeys.URL_FULL, getMDCString(LogKeys.URL_FULL, event));
 		safePutValue(tmp, LogKeys.REQUEST_BODY, getMDCString(LogKeys.REQUEST_BODY, event));
 		safePutValue(tmp, LogKeys.RESPONSE_BODY, getMDCString(LogKeys.RESPONSE_BODY, event));
 		safePutValue(tmp, LogKeys.HTTP_REQUEST_METHOD, getMDCString(LogKeys.HTTP_REQUEST_METHOD, event));
-		safePutValue(tmp, LogKeys.QUERY, getMDCString(LogKeys.REQUEST_QUERY, event));
+		safePutValue(tmp, LogKeys.URL_QUERY, getMDCString(LogKeys.URL_QUERY, event));
 		safePutValue(tmp, LogKeys.USER_AGENT_NAME, getMDCString(LogKeys.USER_AGENT_NAME, event));
 		tmp.put(LogKeys.RESPONSETIME_MS, TimeUnit.NANOSECONDS.toMillis(responsetime_ns));
 		tmp.put(LogKeys.COUNT, timer.getCount());

@@ -94,10 +94,10 @@ public class AccessMetricServletFilter implements Filter {
 		safePutValue(LogKeys.REQUEST_URI, requestURI);
 		StringBuffer requestURL = httpRequest.getRequestURL();
 		if (requestURL != null) {
-			safePutValue(LogKeys.REQUEST_URL, requestURL.toString());
+			safePutValue(LogKeys.URL_FULL, requestURL.toString());
 		}
 		safePutValue(LogKeys.HTTP_REQUEST_METHOD, httpRequest.getMethod());
-		safePutValue(LogKeys.REQUEST_QUERY, httpRequest.getQueryString());
+		safePutValue(LogKeys.URL_QUERY, httpRequest.getQueryString());
 		safePutValue(LogKeys.USER_AGENT_NAME, httpRequest.getHeader(LogKeys.HTTP_USER_AGENT));
 		safePutValue(LogKeys.REQUEST_X_FORWARDED_FOR, httpRequest.getHeader(LogKeys.HTTP_X_FORWARDED_FOR));
 		String xrequestid = httpRequest.getHeader(LogKeys.HTTP_X_REQUEST_ID);
