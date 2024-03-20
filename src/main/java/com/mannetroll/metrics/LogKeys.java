@@ -44,11 +44,6 @@ public class LogKeys {
 	public static final String MEANRATE = "meanrate";
 	public static final String COUNT = "count";
 	public static final String RESPONSETIME_MS = "responsetime_ms";
-	public static final String METHOD = "method";
-	public static final String REQUEST_BODY = "request_body";
-	public static final String RESPONSE_BODY = "response_body";
-	public static final String TYPE = "type";
-	public static final String DOMAIN = "domain";
 	public static final String DELTAMINUTES = "delta_minutes";
 	//
 	public static final String NANOTIME = "nanotime";
@@ -70,8 +65,8 @@ public class LogKeys {
 	public static final String B3_X_SPANID = "X-B3-SpanId";
 	public static final String B3_X_PARENTSPANID = "X-B3-ParentSpanId";
 	//
+	public static final String METHOD = "method";
+	public static final String TYPE = "type";
+	public static final String DOMAIN = "domain";
 	public static final String JAVA_METHOD = "java_method";
-	public static final String JAVA_CEMEVENT = "java_cemevent";
-	public static final String JAVA_SHIPMENTID = "java_shipmentid";
-	public static final String JAVA_ITEMID = "java_itemid";
 }
