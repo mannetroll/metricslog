@@ -50,10 +50,10 @@ public class MetricEventDataBuilder {
 	private void addToJSON(Map<String, Object> tmp, AppenderTimer timer, long responsetime_ns, LogEvent event) {
 		tmp.put(LogKeys.TYPE, METRICS);
 		tmp.put(LogKeys.HTTP_RESPONSE_STATUS_CODE, toInt(getMDCString(LogKeys.HTTP_RESPONSE_STATUS_CODE, event)));
+		safePutValue(tmp, LogKeys.HTTP_REQUEST_METHOD, getMDCString(LogKeys.HTTP_REQUEST_METHOD, event));
 		safePutValue(tmp, LogKeys.DOMAIN, getMDCString(LogKeys.DOMAIN, event));
 		safePutValue(tmp, LogKeys.URL_PATH, getMDCString(LogKeys.URL_PATH, event));
 		safePutValue(tmp, LogKeys.URL_FULL, getMDCString(LogKeys.URL_FULL, event));
-		safePutValue(tmp, LogKeys.HTTP_REQUEST_METHOD, getMDCString(LogKeys.HTTP_REQUEST_METHOD, event));
 		safePutValue(tmp, LogKeys.URL_QUERY, getMDCString(LogKeys.URL_QUERY, event));
 		safePutValue(tmp, LogKeys.USER_AGENT_NAME, getMDCString(LogKeys.USER_AGENT_NAME, event));
 		tmp.put(LogKeys.RESPONSETIME_MS, TimeUnit.NANOSECONDS.toMillis(responsetime_ns));
@@ -72,8 +72,6 @@ public class MetricEventDataBuilder {
 		tmp.put(LogKeys.METRICS_95THPERCENTILE, TimeUnit.NANOSECONDS.toMillis((long) snapshot.get95thPercentile()));
 		tmp.put(LogKeys.METRICS_99THPERCENTILE, TimeUnit.NANOSECONDS.toMillis((long) snapshot.get99thPercentile()));
 		tmp.put(LogKeys.METRICS_999THPERCENTILE, TimeUnit.NANOSECONDS.toMillis((long) snapshot.get999thPercentile()));
-		// Runtime
-		tmp.put("memfree", Runtime.getRuntime().freeMemory());
 	}
 
 	private int toInt(String intStr) {
