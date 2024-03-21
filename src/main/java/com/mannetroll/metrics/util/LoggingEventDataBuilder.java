@@ -48,14 +48,12 @@ public class LoggingEventDataBuilder {
 		// AVU String Extra
 		MDCUtils.safePutValue(map, LogKeys.DOMAIN, MDCUtils.getMDCString(LogKeys.DOMAIN, event));
 		MDCUtils.safePutValue(map, LogKeys.METHOD, MDCUtils.getMDCString(LogKeys.JAVA_METHOD, event));
-		// AVU Long Extra
-		MDCUtils.safePutValue(map, LogKeys.DELTAMINUTES, MDCUtils.getMDCLong(LogKeys.DELTAMINUTES, event));
 
-		String start = MDCUtils.getMDCString(LogKeys.NANOTIME, event);
+		String start = MDCUtils.getMDCString(LogKeys.METRICS_NANOTIME, event);
 		if (start != null) {
 			long nanotime = Long.parseLong(start);
 			long elapsed = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - nanotime);
-			map.put(LogKeys.ELAPSED, elapsed);
+			map.put(LogKeys.METRICS_ELAPSED, elapsed);
 		}
 
 		Message message = event.getMessage();

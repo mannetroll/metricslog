@@ -31,7 +31,7 @@ public class MetricEventDataBuilder {
 		if (metrics_name != null) {
 			AppenderTimer timer = (AppenderTimer) AppenderMetricsManager.getAppenderTimer(metrics_name);
 			// Register start with nanotime OR elapsed with responsetime_ms
-			String nanotimeStr = getMDCString(LogKeys.NANOTIME, event);
+			String nanotimeStr = getMDCString(LogKeys.METRICS_NANOTIME, event);
 			String responsetime_msStr = getMDCString(LogKeys.HTTP_RESPONSE_TIME_MS, event);
 			if (nanotimeStr != null) {
 				long nanotime = Long.parseLong(nanotimeStr);

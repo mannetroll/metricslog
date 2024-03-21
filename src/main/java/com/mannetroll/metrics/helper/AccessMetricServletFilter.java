@@ -87,7 +87,7 @@ public class AccessMetricServletFilter implements Filter {
 	}
 
 	void insertIntoMDC(ServletRequest request) {
-		MDC.put(LogKeys.NANOTIME, String.valueOf(System.nanoTime()));
+		MDC.put(LogKeys.METRICS_NANOTIME, String.valueOf(System.nanoTime()));
 		MDC.put(LogKeys.HTTP_REQUEST_REMOTE_HOST, request.getRemoteHost());
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		String requestURI = httpRequest.getRequestURI();

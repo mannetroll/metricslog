@@ -30,7 +30,6 @@ public class LogKeys {
 	//
 	public static final String APPLICATION = "application";
 	public static final String SYSTEMNAME = "systemname";
-	public static final String ELAPSED = "elapsed";
 	//
 	public static final String METRICS_NAME = "metrics.name";
 	public static final String METRICS_999THPERCENTILE = "metrics.999thpercentile";
@@ -47,8 +46,8 @@ public class LogKeys {
 	public static final String METRICS_ONEMINUTERATE = "metrics.oneminuterate";
 	public static final String METRICS_MEANRATE = "metrics.meanrate";
 	public static final String METRICS_COUNT = "metrics.count";
-	public static final String DELTAMINUTES = "delta_minutes";
-	public static final String NANOTIME = "nanotime";
+	public static final String METRICS_NANOTIME = "metrics.nanotime";
+	public static final String METRICS_ELAPSED = "metrics.elapsed";
 	//
 	public static final String ACCESS_FILTER_RE = "AccessFilter.RuntimeException";
 	public static final String ACCESS_FILTER_SE = "AccessFilter.ServletException";
