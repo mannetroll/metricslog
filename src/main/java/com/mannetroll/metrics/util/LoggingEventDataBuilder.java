@@ -42,12 +42,8 @@ public class LoggingEventDataBuilder {
 		// this GMT timestamp will propagate all the way to elastic
 		map.put(LogKeys.AT_TIMESTAMP, ZonedDateTime.now(ZoneOffset.UTC).toString());
 		map.put(LogKeys.LOG_LEVEL, event.getLevel().toString());
-		map.put(LogKeys.TYPE, COMMON);
+		map.put(LogKeys.LOG_TYPE, COMMON);
 		map.put(LogKeys.PROCESS_UPTIME, (System.currentTimeMillis() - uptime));
-
-		// AVU String Extra
-		MDCUtils.safePutValue(map, LogKeys.DOMAIN, MDCUtils.getMDCString(LogKeys.DOMAIN, event));
-		MDCUtils.safePutValue(map, LogKeys.METHOD, MDCUtils.getMDCString(LogKeys.JAVA_METHOD, event));
 
 		String start = MDCUtils.getMDCString(LogKeys.METRICS_NANOTIME, event);
 		if (start != null) {

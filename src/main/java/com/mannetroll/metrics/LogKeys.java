@@ -10,6 +10,7 @@ public class LogKeys {
 	public static final String AT_TIMESTAMP = "@timestamp";
 	public static final String LOG_LEVEL = "log.level";
 	public static final String LOG_LOGGER = "log.logger";
+	public static final String LOG_TYPE = "log.type";
 	public static final String LOG_ORIGIN_FILE = "log.origin.file";
 	public static final String MESSAGE = "message";
 	public static final String PROCESS_THREAD_NAME = "process.thread.name";
@@ -48,6 +49,8 @@ public class LogKeys {
 	public static final String METRICS_COUNT = "metrics.count";
 	public static final String METRICS_NANOTIME = "metrics.nanotime";
 	public static final String METRICS_ELAPSED = "metrics.elapsed";
+	public static final String METRICS_JAVA_METHOD = "metrics.java_method";
+	public static final String METRICS_DOMAIN = "metrics.domain";
 	//
 	public static final String ACCESS_FILTER_RE = "AccessFilter.RuntimeException";
 	public static final String ACCESS_FILTER_SE = "AccessFilter.ServletException";
@@ -62,9 +65,4 @@ public class LogKeys {
 	public static final String B3_X_TRACEID = "X-B3-TraceId";
 	public static final String B3_X_SPANID = "X-B3-SpanId";
 	public static final String B3_X_PARENTSPANID = "X-B3-ParentSpanId";
-	//
-	public static final String METHOD = "method";
-	public static final String TYPE = "type";
-	public static final String DOMAIN = "domain";
-	public static final String JAVA_METHOD = "java_method";
 }
