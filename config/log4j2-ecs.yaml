@@ -1,6 +1,4 @@
 Configuration:
-   status: warn
-
    Appenders:
       Console:
          name: Console_Appender

@@ -1,14 +1,19 @@
 {
-  "instant" : {
-    "epochSecond" : 1710961036,
-    "nanoOfSecond" : 364593000
+  "@timestamp" : "2024-03-21T09:17:49.821523Z",
+  "a_boolean" : true,
+  "a_float" : 1.1234,
+  "a_number" : 11,
+  "a_string" : "hello",
+  "application" : "myapp",
+  "log.level" : "INFO",
+  "log.logger" : "com.mannetroll.metrics.logger.JsonLayoutTest",
+  "log.origin.file" : "com.mannetroll.metrics.logger.JsonLayoutTest.test(JsonLayoutTest.java:27)",
+  "log.type" : "common",
+  "mannetroll" : {
+    "systemname" : "myapp"
   },
-  "thread" : "main",
-  "level" : "INFO",
-  "loggerName" : "com.mannetroll.metrics.logger.JsonLayoutTest",
-  "message" : "{a_boolean=true, a_float=1.1234, a_string=hello, a_number=11}",
-  "endOfBatch" : false,
-  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
-  "threadId" : 1,
-  "threadPriority" : 5
+  "message" : "The message goes here!",
+  "process.thread.name" : "main",
+  "process.uptime" : 2,
+  "xrequestid" : "e4e6c296692347dc82dcc27343990204"
 }

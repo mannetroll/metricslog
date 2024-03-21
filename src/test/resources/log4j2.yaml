@@ -3,7 +3,7 @@ Configuration:
       Console:
          name: ConsoleAppender
          target: SYSTEM_OUT
-         MetricJsonLayout:
+         JsonLayout:
             application: myapp
             namespace: mannetroll
             locationInfo: true
