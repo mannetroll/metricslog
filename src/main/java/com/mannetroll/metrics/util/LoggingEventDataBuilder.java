@@ -79,7 +79,7 @@ public class LoggingEventDataBuilder {
 
 		if (application != null) {
 			map.put(LogKeys.APPLICATION, application);
-			if (application != null) {
+			if (namespace != null) {
 				Map<String, Object> tmp = new LinkedHashMap<>();
 				tmp.put(LogKeys.SYSTEMNAME, application);
 				map.put(namespace, tmp);
